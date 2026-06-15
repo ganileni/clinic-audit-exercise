@@ -12,25 +12,29 @@
 ## Run it
 Start Claude Code with Opus directing the work:
 `claude --model opus`
-Opus prompts the sub-agents and builds the dashboard; the sub-agents read the
-letters on the cheap Haiku model (set in step 3).
-Then paste the audit prompt (also in `../tools/audit-prompt.txt`):
+Opus prompts the per-patient sub-agents, which read the letters on the cheap
+Haiku model (set in step 3).
 
-> Audit every patient in `clinic/` against the standard in `AUDIT.md`. A
-> patient's records may be split across more than one file, so gather each
-> patient's data from anywhere in the folder. Run the patients in parallel:
-> launch one sub-agent per patient. For every value you rely on, keep the exact
-> quote and the file it came from.
->
-> Write `audit.json`: a list of patients, each with `patient_id`, a `verdict`
-> (`at_target` true/false, `breach` true/false, and `rule_broken`), and an
-> `evidence` list whose items each have `field`, `value`, `quote` and
-> `source_file`. Also write `audit.csv`, one row per evidence item, with columns
-> `patient_id,field,value,evidence_quote,source_file`.
->
-> Then build a single self-contained `dashboard.html` with one section per
-> patient showing the verdict and, for each value, its quote and source letter.
+The audit rules, the output schema, and a worked example all live in `AUDIT.md`;
+the prompt you paste just points at it. Paste the audit prompt (also in
+`../tools/audit-prompt.txt`):
+
+> Follow the instructions in `AUDIT.md`. The patient letters are in `clinic/`.
+> Write your output to `audit.json` in this directory.
+
+The dashboard is a separate step. Once `audit.json` exists, paste the dashboard
+prompt (also in `../tools/dashboard-prompt.txt`):
+
+> Follow the instructions in `DASHBOARD.md`. It reads `audit.json` in this
+> directory; write the result to `dashboard.html` here.
 
 ## Challenge
-First to produce `dashboard.html` with every treat-to-target breach correctly
-flagged wins. Some patients are designed to catch a careless read.
+First to produce a correct `audit.json` (every treat-to-target breach correctly
+flagged) wins. Some patients are designed to catch a careless read.
+
+## Going deeper
+- Anthropic's interactive prompt-engineering guide:
+  https://github.com/anthropics/prompt-eng-interactive-tutorial
+- Claude Code best practices (the whole guide is worth reading):
+  https://code.claude.com/docs/en/best-practices
+- Power-user tricks: https://arps18.github.io/posts/claude-code-mastery/
