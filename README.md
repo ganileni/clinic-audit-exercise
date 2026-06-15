@@ -17,13 +17,13 @@ Haiku model (set in step 3).
 
 The audit rules, the output schema, and a worked example all live in `AUDIT.md`;
 the prompt you paste just points at it. Paste the audit prompt (also in
-`../tools/audit-prompt.txt`):
+`audit-prompt.txt`):
 
 > Follow the instructions in `AUDIT.md`. The patient letters are in `clinic/`.
 > Write your output to `audit.json` in this directory.
 
 The dashboard is a separate step. Once `audit.json` exists, paste the dashboard
-prompt (also in `../tools/dashboard-prompt.txt`):
+prompt (also in `dashboard-prompt.txt`):
 
 > Follow the instructions in `DASHBOARD.md`. It reads `audit.json` in this
 > directory; write the result to `dashboard.html` here.

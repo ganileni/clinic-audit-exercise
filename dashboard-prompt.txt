@@ -1,0 +1,1 @@
+Follow the instructions in `DASHBOARD.md`. It reads `audit.json` in this directory; write the result to `dashboard.html` here.
