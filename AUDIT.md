@@ -24,5 +24,19 @@ Above 3.2 is **not at target**.
 
 Changing folic acid, or adding a painkiller, is **not** an escalation.
 
-A patient's information may be spread across more than one document; gather all
-of it before judging.
+## How to run the audit
+- A patient's records may be split across more than one document, so gather all
+  of a patient's data from anywhere in `clinic/` before judging.
+- Run the patients in parallel: launch one sub-agent per patient. Use only
+  Haiku sub-agents for this per-patient work.
+- For every value you rely on, keep the exact quote and the file it came from.
+
+## What to produce
+1. `audit.json` — a list of patients, each with:
+   - `patient_id`
+   - `verdict`: `at_target` (true/false), `breach` (true/false), and `rule_broken`
+   - `evidence`: a list whose items each have `field`, `value`, `quote` and `source_file`
+2. `audit.csv` — one row per evidence item, with columns
+   `patient_id,field,value,evidence_quote,source_file`
+3. `dashboard.html` — a single self-contained page, one section per patient,
+   showing the verdict and, for each value, its quote and source letter.
