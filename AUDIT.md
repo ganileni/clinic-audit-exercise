@@ -93,8 +93,6 @@ For every patient, include at least one disease-activity item (`das28_current`
 or `das28_components`) and one `treatment_change` item. Where there is no
 documented reason, say so in `reasoning` rather than adding an empty row.
 
-The dashboard is built from `audit.json` as a separate step; see `DASHBOARD.md`.
-
 ## Worked example (not one of the clinic patients)
 Mrs A's letter says: *"DAS28 today 4.1. Continue methotrexate, increase folic
 acid to 5 mg daily. Review in 3 months."* No escalation, and no reason not to
@@ -122,7 +120,3 @@ That patient in `audit.json`:
   ]
 }
 ```
-
-## Going deeper
-For how to write prompts like this well, Anthropic's interactive guide is
-excellent: https://github.com/anthropics/prompt-eng-interactive-tutorial
