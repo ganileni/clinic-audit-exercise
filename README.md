@@ -4,14 +4,16 @@
 1. Install Claude Code (see the slides).
 2. Point it at the shared key shown on screen:
    `export ANTHROPIC_API_KEY=<the key on the slide>`
-3. Use the cheap model for the parallel work:
+3. Send the parallel extraction work to the cheap model:
    `export CLAUDE_CODE_SUBAGENT_MODEL=haiku`
 4. Download this repo (green "Code" button → Download ZIP), unzip it, then in a
    terminal `cd` into the folder and run `ls` to see the letters.
 
 ## Run it
-Start Claude Code on the cheap model:
-`claude --model haiku`
+Start Claude Code with Opus directing the work:
+`claude --model opus`
+Opus prompts the sub-agents and builds the dashboard; the sub-agents read the
+letters on the cheap Haiku model (set in step 3).
 Then paste the audit prompt (also in `../tools/audit-prompt.txt`):
 
 > Audit every patient in `clinic/` against `AUDIT.md`. Gather each patient's
