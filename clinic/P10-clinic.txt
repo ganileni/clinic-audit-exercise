@@ -1,0 +1,9 @@
+Rheumatology outpatient clinic — review
+Patient: P10, 57M.  Diagnosis: rheumatoid arthritis (seropositive), 9 years.
+Current treatment: methotrexate 17.5 mg weekly, folic acid.
+
+Examination today: 6 tender joints, 5 swollen joints, patient global 55/100,
+CRP 24 mg/L. The composite score was not calculated at this visit.
+
+Impression and plan: continue methotrexate at current dose. Routine review in
+6 months.

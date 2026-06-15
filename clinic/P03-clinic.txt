@@ -1,0 +1,9 @@
+Rheumatology outpatient clinic — review
+Patient: P03, 47M.  Diagnosis: rheumatoid arthritis (seropositive), 3 years.
+Current treatment: methotrexate 25 mg weekly, hydroxychloroquine, folic acid.
+
+Today's DAS28-CRP is 5.4, little changed from 5.1 three months ago despite
+maximised oral therapy. Eight tender and seven swollen joints; CRP 31 mg/L.
+
+Impression and plan: high disease activity, inadequate response to conventional
+DMARDs. Start adalimumab (biologic). Review in 12 weeks.

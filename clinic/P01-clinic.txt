@@ -1,0 +1,9 @@
+Rheumatology outpatient clinic — review
+Patient: P01, 54F.  Diagnosis: rheumatoid arthritis (seropositive), 6 years.
+Current treatment: methotrexate 15 mg weekly, folic acid.
+
+Today's DAS28-CRP is 4.6, up from 3.9 three months ago. Six tender and four
+swollen joints; patient global 58/100; CRP 19 mg/L.
+
+Impression and plan: disease remains active. Continue current methotrexate.
+Routine review in 6 months.

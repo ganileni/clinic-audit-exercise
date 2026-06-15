@@ -1,0 +1,11 @@
+Rheumatology outpatient clinic — review
+Patient: P05, 66M.  Diagnosis: rheumatoid arthritis (seropositive), 5 years.
+Current treatment: methotrexate 20 mg weekly, folic acid.
+
+Today's DAS28-CRP is 4.1, essentially unchanged from 4.0 three months ago. Five
+tender and four swollen joints; CRP 22 mg/L. Currently being treated for an
+active lower respiratory chest infection.
+
+Impression and plan: disease active but escalation deferred given the active
+chest infection. Treat the infection first and review in 4 weeks to reassess
+treatment.
