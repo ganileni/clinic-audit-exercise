@@ -155,3 +155,12 @@ something the rules can classify as an escalation or not.
   ]
 }
 ```
+
+## Extra: have the audit check its own output
+After writing `audit.json`, build a small script that validates it against the
+schema above — the `patients` wrapper; every verdict has `at_target`, `breach`,
+`needs_review` and a non-empty `reasoning`, with no verdict both a breach and
+needs review; every evidence item has a non-empty `field` (from the allowed
+names), `value`, `quote` and `source_file`; and every patient has a
+disease-activity item and a `treatment_change` item. Run it and report whether
+`audit.json` passes.
