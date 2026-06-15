@@ -24,6 +24,12 @@ Above 3.2 is **not at target**.
 
 Changing folic acid, or adding a painkiller, is **not** an escalation.
 
+**When the rule does not fit:** if the treatment or situation is outside what
+these rules describe — for example a clinical-trial or investigational agent, or
+an unusual or unclear plan you cannot classify as an escalation or not — do not
+force a breach-or-not verdict. Mark the patient **needs review** and explain
+why, so a clinician decides. Flagging honestly is better than guessing.
+
 ## How to run the audit
 Work one patient at a time, in this order:
 
@@ -59,6 +65,7 @@ Write a single file, `audit.json`, with this shape:
       "verdict": {
         "at_target": false,
         "breach": true,
+        "needs_review": false,
         "reasoning": "One or two sentences: the conclusion and the evidence it rests on."
       },
       "evidence": [
@@ -76,6 +83,10 @@ Write a single file, `audit.json`, with this shape:
   bare list.
 - `verdict.reasoning` is required and must not be empty: it is the motivation a
   clinician reads, and it must cite the evidence below it.
+- `verdict.needs_review` is `true` only when the case is outside the rules (see
+  "When the rule does not fit" above); then leave `breach` `false` and use
+  `reasoning` to say what a clinician should check. A verdict is never both a
+  breach and needs review.
 - Each `evidence` item needs a non-empty `field`, `value`, `quote` and
   `source_file`.
 
@@ -112,11 +123,35 @@ That patient in `audit.json`:
   "verdict": {
     "at_target": false,
     "breach": true,
+    "needs_review": false,
     "reasoning": "DAS28 4.1 is above the 3.2 target; the only change was folic acid, which is not an escalation, and no reason to defer is documented."
   },
   "evidence": [
     {"field": "das28_current", "value": "4.1", "quote": "DAS28 today 4.1", "source_file": "clinic/EXAMPLE.txt"},
     {"field": "treatment_change", "value": "folic acid increased", "quote": "increase folic acid to 5 mg daily", "source_file": "clinic/EXAMPLE.txt"}
+  ]
+}
+```
+
+## Out-of-scope example (not one of the clinic patients)
+Mr B's letter says: *"DAS28 5.2. Enrolled in a trial, started a blinded
+investigational agent."* He is not at target, but a blinded trial agent is not
+something the rules can classify as an escalation or not.
+
+- **Verdict:** needs review. Do not guess a breach; flag it for a clinician.
+
+```json
+{
+  "patient_id": "EXAMPLE-2",
+  "verdict": {
+    "at_target": false,
+    "breach": false,
+    "needs_review": true,
+    "reasoning": "DAS28 5.2 is above target, but the plan is a blinded trial agent the rules cannot classify as an escalation; flagging for clinical review."
+  },
+  "evidence": [
+    {"field": "das28_current", "value": "5.2", "quote": "DAS28 5.2", "source_file": "clinic/EXAMPLE-2.txt"},
+    {"field": "treatment_change", "value": "enrolled in trial; blinded investigational agent", "quote": "started a blinded investigational agent", "source_file": "clinic/EXAMPLE-2.txt"}
   ]
 }
 ```

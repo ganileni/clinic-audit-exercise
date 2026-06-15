@@ -10,10 +10,11 @@ need, **including the text of the cited letters**, so the page works offline and
 a source can be opened from within it.
 
 ## Main view
-- A table with one row per patient: patient id, the verdict (at target / breach),
-  and a marker for patients flagged during review.
+- A table with one row per patient: patient id, the verdict (at target / breach /
+  needs review), and a marker for patients flagged during review. Make breach and
+  needs-review rows stand out.
 - A few aggregate statistics above the table: how many patients are at target,
-  how many breach, and how many are flagged.
+  how many breach, how many need review, and how many are flagged.
 - Clicking a row opens that patient's page.
 - A **Review mode** button steps through patients one page at a time so the
   reviewer can flag the ones with problems. Flags are reflected back in the
