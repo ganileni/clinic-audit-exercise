@@ -25,4 +25,4 @@ Then paste the audit prompt (also in `../tools/audit-prompt.txt`):
 
 ## Challenge
 First to produce `dashboard.html` with every treat-to-target breach correctly
-flagged wins. Two patients are designed to catch a careless read.
+flagged wins. Some patients are designed to catch a careless read.
