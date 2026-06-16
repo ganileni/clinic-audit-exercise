@@ -1,0 +1,8 @@
+# Run outputs (generated when the exercise is run; not part of the shipped materials)
+audit.json
+dashboard.html
+
+# Self-check / show-and-tell checker the agent builds during the exercise
+validate_audit.py
+__pycache__/
+*.pyc

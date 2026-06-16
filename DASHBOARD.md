@@ -1,13 +1,25 @@
 # Build the audit review dashboard
 
-This is a separate task, run alongside the audit. The data you work from and its
-clinical meaning are defined in `AUDIT.md` — read it for the shape of
-`audit.json` and the context. Read `audit.json` (and the letters in `clinic/`
-that it cites), then write one self-contained `dashboard.html`.
+This is a separate task, run **in parallel with the audit**: you do not need to
+wait for `audit.json` to exist. Everything needed to build the page is the
+**schema and clinical meaning defined in `AUDIT.md`** (read it) plus the letters
+in `clinic/`, which are already present. Write one self-contained `dashboard.html`
+that renders an `audit.json` of that schema once it is loaded.
 
-Self-contained means no external files and no internet: embed everything you
-need, **including the text of the cited letters**, so the page works offline and
-a source can be opened from within it.
+Self-contained means no external files and no internet: embed everything the page
+needs, **including the text of the letters in `clinic/`**, so a cited source can
+be opened from within the page offline.
+
+## Loading the data
+The audit writes `audit.json` to this directory when it finishes; the page loads
+it at runtime, not at build time:
+- On open, try to load `./audit.json` automatically.
+- A double-clicked local file cannot always read a sibling file, so also offer a
+  **file picker / drag-and-drop** to select `audit.json`. Both paths must work
+  with no server and no internet.
+- Until data is loaded, show a short "waiting for `audit.json`" state; render as
+  soon as it is provided, and validate it against the schema in `AUDIT.md`,
+  flagging anything missing or malformed.
 
 ## Main view
 - A table with one row per patient: patient id, the verdict (at target / breach /

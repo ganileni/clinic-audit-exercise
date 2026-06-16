@@ -22,11 +22,14 @@ the prompt you paste just points at it. Paste the audit prompt (also in
 > Follow the instructions in `AUDIT.md`. The patient letters are in `clinic/`.
 > Write your output to `audit.json` in this directory.
 
-The dashboard is a separate step. Once `audit.json` exists, paste the dashboard
-prompt (also in `dashboard-prompt.txt`):
+The dashboard runs **in parallel** with the audit: it is built from the schema in
+`AUDIT.md`, so you can send it straight after the audit prompt, in a second agent
+(also in `dashboard-prompt.txt`). The page loads `audit.json` once the audit has
+written it.
 
-> Follow the instructions in `DASHBOARD.md`. It reads `audit.json` in this
-> directory; write the result to `dashboard.html` here.
+> Follow the instructions in `DASHBOARD.md`. Build `dashboard.html` in this
+> directory now; it loads `audit.json` (written by the audit) at runtime, so you
+> do not need to wait for the audit to finish.
 
 ## Challenge
 First to produce a correct `audit.json` (every treat-to-target breach correctly
