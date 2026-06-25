@@ -1,0 +1,104 @@
+============================================================
+ Copy-paste cheat sheet -- clinic audit exercise
+============================================================
+
+Everything here is meant to be copied straight into your terminal or your web
+browser, so you don't have to type it by hand. Work through it top to bottom.
+
+
+------------------------------------------------------------
+ 1. Get the exercise
+------------------------------------------------------------
+
+Open this page in your web browser to download the ZIP:
+
+    https://github.com/ganileni/clinic-audit-exercise
+
+On that page: click the green "Code" button -> "Download ZIP", then unzip it
+somewhere easy to find (your Desktop is fine).
+
+Comfortable with git? Clone it instead -- paste this in the terminal:
+
+    git clone https://github.com/ganileni/clinic-audit-exercise
+
+Inside the folder you'll also find a PDF of the slides (slides.pdf) to consult.
+
+
+------------------------------------------------------------
+ 2. Set up the terminal
+------------------------------------------------------------
+
+Your access pass -- use the key shown on the slide:
+
+    export ANTHROPIC_API_KEY=<the key on the slide>
+
+Send the per-patient readers to the cheap Haiku model:
+
+    export CLAUDE_CODE_SUBAGENT_MODEL=haiku
+
+Go into the unzipped folder. Don't type the path by hand -- copy it from your
+file manager and paste it after "cd ":
+  - Windows: right-click the folder -> "Copy as path"  (older Windows:
+    Shift + right-click -> "Copy as path"), then press Ctrl+V in PowerShell.
+  - Mac: click the folder once, press Cmd+Option+C (or just drag the folder
+    into the Terminal window), then press Cmd+V.
+
+    cd <paste the folder path here>
+
+Commands to know
+
+- cd - "change directory", opens a certain directory (folder)
+- ls - "list" files in the open directory
+- cat <filename> - print the content of a file
+- date - print the current day and time
+
+Start Claude Code, with Opus directing the work:
+
+    claude
+
+
+------------------------------------------------------------
+ 3. Let it run on its own (auto mode)
+------------------------------------------------------------
+
+Press Shift+Tab to switch Claude Code into "auto" mode, so it works without
+stopping to ask you to approve every step.
+
+Tab is the key with two arrows (one pointing left, one right), just to the
+LEFT of the "Q" key. Hold Shift and press it; repeat until the prompt shows
+"auto".
+
+
+------------------------------------------------------------
+ 4. The audit prompt
+------------------------------------------------------------
+
+Paste this whole line into Claude Code and press Enter:
+
+Follow the instructions in `AUDIT.md`. The patient letters are in `clinic/`. Write your output to `audit.json` in this directory.
+
+
+------------------------------------------------------------
+ 5. The dashboard prompt  (open a second agent first)
+------------------------------------------------------------
+
+Paste this whole line into a second agent and press Enter:
+
+Follow the instructions in `DASHBOARD.md`. Build `dashboard.html` in this directory now; it loads `audit.json` (written by the audit) at runtime, so you do not need to wait for the audit to finish.
+
+
+------------------------------------------------------------
+ 6. Going deeper  (open in your web browser)
+------------------------------------------------------------
+
+Anthropic's interactive prompt-engineering guide:
+
+    https://github.com/anthropics/prompt-eng-interactive-tutorial
+
+Claude Code best practices:
+
+    https://code.claude.com/docs/en/best-practices
+
+Power-user tricks:
+
+    https://arps18.github.io/posts/claude-code-mastery/

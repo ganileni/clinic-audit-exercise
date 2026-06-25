@@ -1,1 +1,0 @@
-Follow the instructions in `DASHBOARD.md`. Build `dashboard.html` in this directory now; it loads `audit.json` (written by the audit) at runtime, so you do not need to wait for the audit to finish.

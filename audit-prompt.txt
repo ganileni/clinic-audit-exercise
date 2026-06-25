@@ -1,1 +1,0 @@
-Follow the instructions in `AUDIT.md`. The patient letters are in `clinic/`. Write your output to `audit.json` in this directory.

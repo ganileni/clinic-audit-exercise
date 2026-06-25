@@ -9,6 +9,9 @@
 4. Download this repo (green "Code" button → Download ZIP), unzip it, then in a
    terminal `cd` into the folder and run `ls` to see the letters.
 
+Everything you need to type or paste (commands, both prompts, the links) is in
+`copypaste.txt`, and a PDF of the slides is in `slides.pdf`.
+
 ## Run it
 Start Claude Code with Opus directing the work:
 `claude --model opus`
@@ -17,14 +20,14 @@ Haiku model (set in step 3).
 
 The audit rules, the output schema, and a worked example all live in `AUDIT.md`;
 the prompt you paste just points at it. Paste the audit prompt (also in
-`audit-prompt.txt`):
+`copypaste.txt`):
 
 > Follow the instructions in `AUDIT.md`. The patient letters are in `clinic/`.
 > Write your output to `audit.json` in this directory.
 
 The dashboard runs **in parallel** with the audit: it is built from the schema in
 `AUDIT.md`, so you can send it straight after the audit prompt, in a second agent
-(also in `dashboard-prompt.txt`). The page loads `audit.json` once the audit has
+(also in `copypaste.txt`). The page loads `audit.json` once the audit has
 written it.
 
 > Follow the instructions in `DASHBOARD.md`. Build `dashboard.html` in this
