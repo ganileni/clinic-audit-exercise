@@ -14,9 +14,9 @@ Everything you need to type or paste (commands, both prompts, the links) is in
 
 ## Run it
 Start Claude Code with Opus directing the work:
-`claude --model opus`
-Opus prompts the per-patient sub-agents, which read the letters on the cheap
-Haiku model (set in step 3).
+`claude`
+This opens Opus by default; Opus prompts the per-patient sub-agents, which read
+the letters on the cheap Haiku model (set in step 3).
 
 The audit rules, the output schema, and a worked example all live in `AUDIT.md`;
 the prompt you paste just points at it. Paste the audit prompt (also in
